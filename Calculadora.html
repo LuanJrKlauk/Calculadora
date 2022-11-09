@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<style>
+    @font-face{
+        font-family: 'naruto' ;
+        src: url('njnaruto.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    :root {
+        --cor001:#0B2B40 ;
+        --cor002: #30A5BF;
+        --cor003: #185359;
+        --cor004: #F2BE22;
+        --cor005: #A6874E;
+
+    }
+
+    body {
+        font-family:'naruto', 'Courier New', Courier, monospace;
+        display: flex;
+        justify-content: center;
+        font-weight: bolder;
+        margin: auto;
+        text-align: center;
+        background-color: #30a5bf48
+
+
+    }
+
+    #calculadora {
+
+        width: 300px;
+        height: 400px;
+        margin-top: 20px;
+        border-radius: 10px;
+
+
+
+    }
+
+    #botao:hover {
+        background-color: rgba(0, 0, 0, 0.568);
+        color: white;
+
+
+    }
+
+    #botao {
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border: 1px solid black;
+        border-radius: 3px;
+        margin: 5px;
+        font-size: 27px;
+        color: rgb(14, 13, 13);
+        cursor: pointer;
+        text-align: center;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.616);
+
+    }
+
+
+    #resultado {
+
+        width: 300px;
+        height: 70px;
+        margin-top: 15px;
+        border: 1px solid black;
+        border-radius: 10px;
+        font-size: 30px;
+        padding-top: 10px;
+        color: black;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.616);
+
+
+    }
+
+
+    #fundo {
+
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        width: 380px;
+        height: 561px;
+        border-radius: 10px;
+        margin-top: 50px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    p {
+        padding-top: -5px;
+    }
+
+</style>
+
+<body>
+
+        <center>
+            <div id="fundo">
+                <p id="resultado">
+                </p>
+                <div id="calculadora">
+                    <div id="botao" onclick="limpar()" style="width: 132px;"><p>C</p></div>
+                    <div id="botao" onclick="insert('/')"><p>/</p></div>
+                    <div id="botao" onclick="apagar('')"><p>⌫ </p></div>
+                    <div id="botao" onclick=" insert('7')"><p>7</p></div>
+                    <div id="botao" onclick=" insert('8')"><p>8</p></div>
+                    <div id="botao" onclick=" insert('9')"><p>9</p></div>
+                    <div id="botao" onclick="insert('*')"><p>*</p></div>
+                    <div id="botao" onclick=" insert('4')"><p>4</p></button></div>
+                    <div id="botao" onclick=" insert('5')"><p>5</p></button></div>
+                    <div id="botao" onclick=" insert('6')"><p>6</p></button></div>
+                    <div id="botao" onclick="insert('-')"><p>-</p></div>
+                    <div id="botao" onclick=" insert('1')"><p>1</p></div>
+                    <div id="botao" onclick=" insert('2')"> <p>2</p> </div>
+                    <div id="botao" onclick=" insert('3') "><p>3</p></div>
+                    <div id="botao" onclick="insert('+')"><p>+</p></div>
+                    <div id="botao" onclick=" insert('0')"><p>0</p></div>
+                    <div id="botao" onclick="insert('.')" ><p>.</p></div>
+                    <div id="botao" style="width: 132px;" onclick="calcular()"><p>=</p></div>
+                </div>
+            </div>
+        </center>
+        <script>
+            var valor1 = Number.parseFloat(window.document.getElementById('botao'))
+            var valor2 = Number
+
+            function insert(num) {
+                var numero = document.getElementById('resultado').innerHTML
+                document.getElementById('resultado').innerHTML = numero + num
+            }
+
+            function apagar() {
+                var resultado = document.getElementById('resultado').innerHTML;
+
+
+                document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1);
+            }
+
+            function limpar() {
+                document.getElementById('resultado').innerHTML = ""
+
+            }
+
+            function calcular() {
+                var resultado = document.getElementById('resultado').innerHTML;
+
+                    document.getElementById('resultado').innerHTML = eval(resultado)
+}
+
+
+
+        </script>
+
+</body>
+
+</html>
